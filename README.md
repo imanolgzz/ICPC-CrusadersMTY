@@ -1,2 +1,2 @@
-# ICPC---CrusadersMTY
-Upsolving and notes for ICPC contests 🏆
+# ICPC-CrusadersMTY
+Upsolving and notes for ICPC contests 🏆 - CrusadersMTY Team Repo.
