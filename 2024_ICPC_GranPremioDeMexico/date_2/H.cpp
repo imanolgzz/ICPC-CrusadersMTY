@@ -65,18 +65,27 @@ int main(){
     } else {
       // 1 3 5
       // cout << "deleting: " << cPointer -> val << " and " << rPointer -> val << endl;
-      cPointer -> l -> r = cPointer -> r;
-      cPointer -> r -> l = cPointer -> l;
-      Node*temp = cPointer;
-      cPointer = temp->l;
-      delete(temp);
-      rPointer -> l -> r = rPointer -> r;
-      rPointer -> r -> l = rPointer -> l;
-      Node*temp2 = rPointer;
-      if(rPointer -> val != rPointer -> r -> val){
-        rPointer = temp2 -> r;
-        delete(temp2);
+      Node*tempR = rPointer;
+      Node*tempC = cPointer;
+      if(cPointer -> l -> val == tempR -> val){
+        cPointer = cPointer -> l -> l;
+      } else {
+        cPointer = cPointer -> l;
       }
+
+      if(rPointer -> r -> val == tempC -> val){
+        rPointer = rPointer -> r -> r;
+      } else {
+        rPointer = rPointer -> r;
+      }
+
+      tempR -> l -> r = tempR -> r;
+      tempR -> r -> l = tempR -> l;
+      delete(tempR);
+      tempC -> l -> r = tempC -> r;
+      tempC -> r -> l = tempC -> l;
+      delete(tempC);
+
       n-=2;
     }
   }
