@@ -23,12 +23,12 @@ int main(){
       cin >> a;
       flowers[a]++;
     }
-
     // 1 2 3
     long long max = 0;
     for(auto flower: flowers){
       if(flowers.find(flower.first - 1) != flowers.end()){
-        // case it selects both key and key - 1
+        
+				// case it selects both key and key - 1
         // ax + (a - 1)y <= m (maximize)
         // ax + ay - y <= m
         // a(x + a) - y <= m
