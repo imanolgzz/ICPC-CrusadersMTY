@@ -14,7 +14,7 @@ void setIO(){
 int main(){
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-  setIO();
+  // setIO();
   int t;
   cin >> t;
   while(t--){
@@ -32,10 +32,10 @@ int main(){
 
 
     //int rows = ((largeSide / k) + (largeSide % k));
-    int rows = ((largeSide - ((largeSide - 1) / k + 1)) + ceil((largeSide - 1) / float(k)));
+    int rows = min(k, largeSide);
     // int columns = ((smallSide / k) + (smallSide % k));
-    int columns = ((smallSide - ((smallSide - 1) / k + 1)) + ceil((smallSide - 1) / float(k)));
-    cout << rows << " " << columns << endl;
+    int columns = min(k, smallSide);
+    cout << rows * columns << '\n';
   }
   return 0;
 }
