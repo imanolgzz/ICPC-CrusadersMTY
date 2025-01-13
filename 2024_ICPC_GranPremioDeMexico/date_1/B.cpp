@@ -61,6 +61,7 @@ int main(){
   Mat nullmat(20);
   nullmat.identity();
   // states.print();
+
   int T;
   cin >> T;
   while(T--){
@@ -82,8 +83,6 @@ int main(){
       output = output % mod;
     }
     cout << output << '\n';
-
   }
-
   return 0;
 }
