@@ -11,7 +11,7 @@ void redirectIO(){
 int main(){
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-  redirectIO();
+  // redirectIO();
   int t;
   cin >> t;
   while(t--){
@@ -20,7 +20,27 @@ int main(){
     ll lower = l / G;
     lower += (l % G > 0);
     ll upper = r / G;
-    cout << "Find coprimes between " << lower << " and " << upper << endl;
+    ll k = upper-lower;
+    ll A = -1, B = -1;
+    while(k > 0){
+      for(ll i = lower; i <= upper - k; i++){
+        if(gcd(i,i+k) == 1){
+          A = i;
+          B = i+k;
+          goto end;
+        }
+      }
+      k--;
+    }
+end:
+  if(A != -1 ){
+    cout << A * G << ' ' << B * G << endl;
+  } else if(lower == 1 && upper == 1) {
+    cout << -A*G << ' ' << -B * G << endl;  
+  } else {
+    cout << "-1 -1" << endl;
+  }
+
   }
   return 0;
 }
