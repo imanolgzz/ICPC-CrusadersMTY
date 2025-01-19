@@ -8,7 +8,6 @@ struct graph
     int V;
     vector<vector<int>> g;
     vector<int> color;
- 
     bool dfs(int v)
     {
         if(color[v] != 0) return false;
@@ -37,7 +36,7 @@ struct graph
         this->color.resize(V);
     };
 };
- 
+
 int get_bit(int x, int y)
 {
     return (x >> y) & 1;
